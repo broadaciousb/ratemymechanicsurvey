@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RateMyMech Survey</title>
+  <link rel="stylesheet" href="styles.css">
+  </link>
+  <script src="index.js" defer></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript"></script>
+  <script type="text/javascript">
+    (function(){
+       emailjs.init({
+         publicKey: "6G_F_yg7CUVy-kc9W",
+       });
+    })();
+ </script>
+</head>
+
+<body>
+  <div class="container">
+    <div class="submission__overlay">
+      <div class="loading__modal">
+        Loading
+      </div>
+      <div class="submitted__modal visible">Thank you!</div>
+    </div>
+    <div class="row">
+      <div class="intro">
+        <h1 class="intro__greeting">Hello there</h1>
+        <p class="intro__description">We're building a platform called <span
+            class="primary-color">RateMyMechanics.com</span> — a place where you can
+          review mechanics instead of just auto repair shops. We'd love your feedback to help shape it.</p>
+      </div>
+      <div class="questions">
+        <form id="survey" onsubmit="submit(event)">
+          <input class="user__info--input" type="text" id="name" name="name" autocomplete="on"></input>
+          <!-- PROBLEM UNDERSTANDING -->
+          <div class="question__wrapper">
+            <h2 class="question">
+              Have you ever worried about being overcharged or misled when getting car repairs?
+            </h2>
+            <input type="radio" id="q1a" name="q1" value="Yes">
+            <label for="q1a">Yes</label>
+            <br>
+            <input type="radio" id="q1b" name="q1" value="No">
+            <label for="q1b">No</label>
+            <br>
+            <input type="radio" id="q1c" name="q1" value="Sometimes">
+            <label for="q1c">Sometimes</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Do you currently read online reviews before choosing a repair shop?
+            </h2>
+            <input type="radio" id="q2a" name="q2" value="Yes">
+            <label for="q2a">Yes</label>
+            <br>
+            <input type="radio" id="q2b" name="q2" value="No">
+            <label for="q2b">No</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would it help to know the reputation of the specific mechanic working on your car?
+            </h2>
+            <input type="radio" id="q3a" name="q3" value="Definitely">
+            <label for="q3a">Definitely</label>
+            <br>
+            <input type="radio" id="q3b" name="q3" value="Maybe">
+            <label for="q3b">Maybe</label>
+            <br>
+            <input type="radio" id="q3c" name="q3" value="Not really">
+            <label for="q3c">Not really</label>
+            <br>
+          </div>
+          <!-- SOLUTION FEEDBACK -->
+          <div class="solution__feedback">
+            <div class="feedback__description"><span class="primary-color">RateMyMechanics.com</span> lets you:</div>
+            <ul class="solutions">
+              <li>Review and follow individual mechanics</li>
+              <li>See verified reviews and service history</li>
+              <li>Compare quotes and book appointments online</li>
+            </ul>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Does that sound useful to you?
+            </h2>
+            <input type="radio" id="q4a" name="q4" value="Yes">
+            <label for="q4a">Yes</label>
+            <br>
+            <input type="radio" id="q4b" name="q4" value="Somewhat">
+            <label for="q4b">Somewhat</label>
+            <br>
+            <input type="radio" id="q4c" name="q4" value="No">
+            <label for="q4c">No</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">What part of this idea is most helpful to you?</h2>
+            <textarea class="user__input" id="q5" name="q5"></textarea>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">What would we need to improve or add to make you want to use it?</h2>
+            <textarea class="user__input" id="q6" name="q6"></textarea>
+          </div>
+          <!-- VALUE AND WILLINGNESS TO PAY -->
+          <div class="question__wrapper">
+            <h2 class="question">
+              How valuable would this be to you when choosing a mechanic?
+            </h2>
+            <input type="radio" id="q7a" name="q7" value="Very valuable">
+            <label for="q7a">Very valuable</label>
+            <br>
+            <input type="radio" id="q7b" name="q7" value="Somewhat valuable">
+            <label for="q7b">Somewhat valuable</label>
+            <br>
+            <input type="radio" id="q7c" name="q7" value="Not valuable">
+            <label for="q7c">Not valuable</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would you pay to access verified reviews, quotes, or book through the platform?
+            </h2>
+            <input type="radio" id="q8a" name="q8" value="Yes">
+            <label for="q8a">Yes</label>
+            <br>
+            <input type="radio" id="q8b" name="q8" value="No, I expect it to be free">
+            <label for="q8b">No, I expect it to be free</label>
+            <br>
+            <input type="radio" id="q8c" name="q8" value="Maybe if I was already saving money on repairs">
+            <label for="q8c">Maybe if I was already saving money on repairs</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">If you would pay, how much per month would you feel good about?</h2>
+            <textarea class="user__input" id="q9" name="q9"></textarea>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would you like to join our early access list or get updates?
+            </h2>
+            <input type="radio" id="q10a" name="q10" value="Yes">
+            <label for="q10a">Yes</label>
+            <br>
+            <input type="radio" id="q10b" name="q10" value="No, I expect it to be free">
+            <label for="q10b">No, I expect it to be free</label>
+            <br>
+          </div>
+          <div class="user__info">
+            <h2 class="question">Enter your name, email, and phone number if you would like to join our early access list or
+              get udpates.</h2>
+              <label class="user__info--label" for="name">Name:</label>
+            
+            <br>
+            <label class="user__info--label" for="email">Email:</label>
+            <input class="user__info--input" type="text" id="email" name="email" autocomplete="on"></input>
+            <br>
+            <label class="user__info--label" for="phone">Phone:</label>
+            <input class="user__info--input" type="text" id="phone" name="phone" autocomplete="on"></input>
+          </div>
+          <div class="mechanics">
+            <div class="mechanics__title">Are you a <span class="primary-color">mechanic?</span> </div>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would you want a profile where customers could follow and review you?
+            </h2>
+            <input type="radio" id="q11a" name="q11" value="Yes">
+            <label for="q11a">Yes</label>
+            <br>
+            <input type="radio" id="q11b" name="q11" value="No">
+            <label for="q11b">No</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would you use a tool that helps you build your reputation and attract more jobs?
+            </h2>
+            <input type="radio" id="q12a" name="q12" value="Yes">
+            <label for="q12a">Yes</label>
+            <br>
+            <input type="radio" id="q12b" name="q12" value="No">
+            <label for="q12b">No</label>
+            <br>
+          </div>
+          <div class="question__wrapper">
+            <h2 class="question">
+              Would you pay for it if it helped grow your business?
+            </h2>
+            <input type="radio" id="q13a" name="q13" value="Yes">
+            <label for="q13a">Yes</label>
+            <br>
+            <input type="radio" id="q13b" name="q13" value="No">
+            <label for="q13b">No</label>
+            <br>
+          </div>
+          <button id="submit" class="form__submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

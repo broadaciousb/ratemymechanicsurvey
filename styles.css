@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+  transition: all 300ms ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+p {
+  line-height: 2;
+  font-size: 32px;
+}
+
+input {
+  margin-bottom: 24px;
+}
+
+label {
+  font-size: 20px;
+}
+
+ul {
+  margin-left: 24px;
+}
+
+li {
+  font-size: 32px;
+  margin-bottom: 24px;
+}
+
+.hidden {
+  display: hidden;
+  transition: 400ms ease;
+}
+
+
+
+.user__input {
+  font-size: 24px;
+  padding: 16px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.primary-color {
+  color: red;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.row {
+  margin: 5% 10%;
+}
+
+.intro {
+  max-width: 1100px;
+}
+
+.intro__greeting {
+  font-size: 96px;
+  margin-bottom: 24px;
+}
+
+
+.questions {
+  margin-top: 96px;
+}
+
+.question__wrapper {
+  margin: 72px 0;
+}
+
+.question {
+  margin-bottom: 24px;
+}
+
+.solution__feedback {
+  margin: 72px 0;
+}
+
+.feedback__description {
+  font-size: 56px;
+  margin-bottom: 24px;
+}
+
+.user__info--input {
+  font-size: 24px;
+  width: 100%;
+  max-width: 600px;
+  padding: 8px;
+}
+
+.user__info--label {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.mechanics__title {
+  font-size: 56px;
+  margin: 40px 0;
+}
+
+.form__submit {
+  font-size: 32px;
+  height: 64px;
+  width: 100%;
+  max-width: 400px;
+  border: 3px solid black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form__submit:hover {
+  background-color: red;
+}
+
+.form__submit:active {
+  background-color: white;
+  border-color: red;
+  color: red;
+  transform: scale(0.9);
+}
+
+
+/* OVERLAY */
+.submission__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: -1;
+}
+
+.loading__modal {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+
+.submitted__modal {
+  background-color: black;
+  opacity: 0.5;
+  color: white;
+}
+
+.visible {
+  display: flex;
+  z-index: 1;
+}
+
+.hide {
+  visibility: hidden;
+}
