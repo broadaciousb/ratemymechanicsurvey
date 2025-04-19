@@ -11,22 +11,20 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript"></script>
   <script type="text/javascript">
-    (function(){
-       emailjs.init({
-         publicKey: "6G_F_yg7CUVy-kc9W",
-       });
+    (function () {
+      emailjs.init({
+        publicKey: "6G_F_yg7CUVy-kc9W",
+      });
     })();
- </script>
+  </script>
 </head>
 
 <body>
   <div class="container">
-    <div class="submission__overlay">
-      <div class="loading__modal">
-        Loading
-      </div>
-      <div class="submitted__modal visible">Thank you!</div>
+    <div class="overlay loading__overlay">
+      Loading
     </div>
+    <div class="overlay submitted__overlay">Thank you!</div>
     <div class="row">
       <div class="intro">
         <h1 class="intro__greeting">Hello there</h1>
@@ -35,8 +33,7 @@
           review mechanics instead of just auto repair shops. We'd love your feedback to help shape it.</p>
       </div>
       <div class="questions">
-        <form id="survey" onsubmit="submit(event)">
-          <input class="user__info--input" type="text" id="name" name="name" autocomplete="on"></input>
+        <form id="survey" onsubmit="submitForm(event)">
           <!-- PROBLEM UNDERSTANDING -->
           <div class="question__wrapper">
             <h2 class="question">
@@ -102,11 +99,11 @@
           </div>
           <div class="question__wrapper">
             <h2 class="question">What part of this idea is most helpful to you?</h2>
-            <textarea class="user__input" id="q5" name="q5"></textarea>
+            <input type="text" class="user__input" id="q5" name="q5"></input>
           </div>
           <div class="question__wrapper">
             <h2 class="question">What would we need to improve or add to make you want to use it?</h2>
-            <textarea class="user__input" id="q6" name="q6"></textarea>
+            <input type="text" class="user__input" id="q6" name="q6"></input>
           </div>
           <!-- VALUE AND WILLINGNESS TO PAY -->
           <div class="question__wrapper">
@@ -139,7 +136,7 @@
           </div>
           <div class="question__wrapper">
             <h2 class="question">If you would pay, how much per month would you feel good about?</h2>
-            <textarea class="user__input" id="q9" name="q9"></textarea>
+            <input type="text" class="user__input" id="q9" name="q9"></input>
           </div>
           <div class="question__wrapper">
             <h2 class="question">
@@ -148,15 +145,16 @@
             <input type="radio" id="q10a" name="q10" value="Yes">
             <label for="q10a">Yes</label>
             <br>
-            <input type="radio" id="q10b" name="q10" value="No, I expect it to be free">
-            <label for="q10b">No, I expect it to be free</label>
+            <input type="radio" id="q10b" name="q10" value="No">
+            <label for="q10b">No</label>
             <br>
           </div>
           <div class="user__info">
-            <h2 class="question">Enter your name, email, and phone number if you would like to join our early access list or
+            <h2 class="question">Enter your name, email, and phone number if you would like to join our early access
+              list or
               get udpates.</h2>
-              <label class="user__info--label" for="name">Name:</label>
-            
+            <label class="user__info--label" for="name">Name:</label>
+            <input class="user__info--input" type="text" id="name" name="name" autocomplete="on"></input>
             <br>
             <label class="user__info--label" for="email">Email:</label>
             <input class="user__info--input" type="text" id="email" name="email" autocomplete="on"></input>
@@ -200,7 +198,9 @@
             <label for="q13b">No</label>
             <br>
           </div>
-          <button id="submit" class="form__submit">Submit</button>
+          <div class="submit__wrapper">
+            <button id="submit" class="form__submit">Submit</button>
+          </div>
         </form>
       </div>
     </div>
