@@ -3,6 +3,7 @@
 // 6G_F_yg7CUVy-kc9W
 
 function submitForm(event) {
+  event.preventDefault();
   console.log('this worked')
 
   emailjs
@@ -13,7 +14,8 @@ function submitForm(event) {
   )
   .then(() => {
     success.classList += " visible";
-    console.log("submitted")
+    console.log("submitted");
+    location.reload();
   })
   .catch(() => {
     alert("The email service is temporarily unavailable.")
