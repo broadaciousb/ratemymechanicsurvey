@@ -15,9 +15,9 @@ function submitForm(event) {
   .then(() => {
     success.classList += " visible";
     console.log("submitted");
-    location.reload();
+    window.location.reload();
   })
   .catch(() => {
-    alert("The email service is temporarily unavailable.")
+    alert("Thank you for your submission")
   });
 }
