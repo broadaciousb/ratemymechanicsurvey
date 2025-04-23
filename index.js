@@ -3,6 +3,7 @@
 // 6G_F_yg7CUVy-kc9W
 
 function submitForm(event) {
+  event.preventDefault();
   console.log('this worked')
 
   emailjs
