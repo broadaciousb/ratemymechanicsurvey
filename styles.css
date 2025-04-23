@@ -92,10 +92,14 @@ li {
   margin-bottom: 24px;
 }
 
+.user__info {
+  margin: 72px 0;
+  max-width: 600px;
+}
+
 .user__info--input {
   font-size: 24px;
   width: 100%;
-  max-width: 600px;
   padding: 8px;
 }
 
@@ -140,7 +144,7 @@ li {
 
 /* OVERLAY */
 .overlay {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -148,25 +152,15 @@ li {
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: -1;
-}
-
-.loading__modal {
+  z-index: 1;
   background-color: black;
-  opacity: 0.5;
   color: white;
+  font-size: 36px;
 }
 
-
-.submitted__modal {
-  background-color: black;
-  opacity: 0.5;
-  color: white;
-}
 
 .visible {
   display: flex;
-  z-index: 1;
 }
 
 .hide {
